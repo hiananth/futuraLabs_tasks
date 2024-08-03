@@ -1,4 +1,4 @@
-#Write a program to print all the even numbers between 1 and 20, skipping the number 10 using a continue statement.
+# 1 Write a program to print all the even numbers between 1 and 20, skipping the number 10 using a continue statement
 
 for number in range(1,21):
     if number % 2!=0:
@@ -7,8 +7,8 @@ for number in range(1,21):
         continue
     print(number)
     
-#Create a program that asks the user for numbers until they enter a negative number. 
-#Print the sum of all the positive numbers entered by the user, terminating the loop when a negative number is entered using a break statement   
+# 2 Create a program that asks the user for numbers until they enter a negative number. Print the sum of all the positive numbers entered by the user, terminating the loop when a negative number is entered using a break statement   
+
 sum=0
 while True:
     number=float(input("Enter a number(negative number to stop):"))
@@ -17,7 +17,8 @@ while True:
     sum +=number
 print(f"The sum of all positive numbers entered is:{sum}")
 
-#Write a program to find the first 5 multiples of 3, but if a multiple of 3 is divisible by 4, skip it using a continue statement
+# 3 Write a program to find the first 5 multiples of 3, but if a multiple of 3 is divisible by 4, skip it using a continue statement
+
 con=0
 num=1
 while con<5:

@@ -1,0 +1,43 @@
+# 1 Develop a program that asks the user for numbers until they enter 0. 
+# Print the sum of all the numbers entered by the user except for the number 7, using a continue statement to skip adding 7 to the sum.
+
+def number():
+    sum=0
+    while True:
+        num=int(input("Enter a number:"))
+        if num==0:
+            break
+        if num==7:
+            continue
+        sum+=num
+    print("Sum of the Numbers is:",sum)
+number()
+
+# 2 Create a program that generates random numbers between 1 and 100 until it generates a number that is a perfect square. 
+# Print the number and its square root, then terminate the loop using a break statement.
+
+import random
+import math
+def square():
+    while True:
+        number=random.randint(1,100)
+        if math.isqrt(number)**2==number:
+            print(f"The perfect square number is {number} and its square root is {math.isqrt(number)}.")
+            break
+square()
+
+# 3 Write a program to print all the vowels in a given string, 
+# but skip printing if the character is a space using a continue statement.
+
+def vowels(input):
+    vowels = "aeiouAEIOU"
+    
+    for char in input:
+        if char == ' ':
+            continue
+        if char in vowels:
+            print(char, end=' ')
+
+input= input("Enter a string: ")
+vowels(input)
+

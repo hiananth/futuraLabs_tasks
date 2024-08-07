@@ -1,0 +1,102 @@
+# 1 Create a base class called Shape with a method area. Create subclasses Circle, Square, and Triangle that implement the area method. 
+# Demonstrate polymorphism by creating a list of different shape objects and iterating through it to calculate their areas.
+
+
+import math
+class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return math.pi * self.radius ** 2
+
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+    
+    def area(self):
+        return self.side ** 2
+
+
+class Triangle(Shape):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+    
+    def area(self):
+        return 0.5 * self.base * self.height
+
+
+circle = Circle(6)
+square = Square(10)
+triangle = Triangle(5, 10)
+
+
+shapes = [circle, square, triangle]
+for shape in shapes:
+    print(f'The area of the {shape.__class__.__name__} is {shape.area()}')
+
+
+# 2 Create a class called Rectangle with private attributes for width and height. Provide getter. and setter methods to access and modify these attributes. 
+# Include a method to calculate the area of the rectangle
+
+
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.__width = width  
+        self.__height = height  
+
+    def get_width(self):
+        return self.__width
+
+    def set_width(self, width):
+        if width > 0:
+            self.__width = width
+        else:
+            raise ValueError("Width must be greater than 0")
+
+    def get_height(self):
+        return self.__height
+
+    def set_height(self, height):
+        if height > 0:
+            self.__height = height
+        else:
+            raise ValueError("Height must be greater than 0")
+
+    def area(self):
+        return self.__width * self.__height
+
+    def __str__(self):
+        return f"Rectangle(width={self.__width}, height={self.__height}, area={self.area()})"
+
+try:
+    rect = Rectangle(10, 5)
+    print(rect)  
+
+    
+    rect.set_width(6)
+    rect.set_height(7)
+    print(rect) 
+    rect.set_width(-3)  
+except ValueError as e:
+    print(e)
+
+
+    
+
+
+
+
+
+
+
+
+
+

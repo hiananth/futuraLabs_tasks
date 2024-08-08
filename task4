@@ -1,0 +1,44 @@
+#1 Develop a program that simulates a game of rolling a dice. Roll the dice until you get a 6. 
+# and count the number of rolls it takes to get a 6. Print the count using a break statement.
+
+import random
+def roll_dice():
+    return random.randint(1, 6)
+
+def simulate_dice_game():
+    roll_count = 0
+    while True:
+        roll_count += 1
+        dice_value = roll_dice()
+        print(f"Roll {roll_count}: {dice_value}")
+        if dice_value == 6:
+            break
+    print(f"It took {roll_count} rolls to get a 6.")
+simulate_dice_game()
+
+
+
+#3 Write a Python program to create a person class. 
+# Include attributes like name, country and date of birth. Implement a method to determine the person's age.
+
+from datetime import datetime
+class Person:
+    def __init__(self, name, country, date_of_birth):
+        self.name = name
+        self.country = country
+        self.date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d")
+
+    def calculate_age(self):
+        today = datetime.today()
+        age = today.year - self.date_of_birth.year
+        if today.month < self.date_of_birth.month or (today.month == self.date_of_birth.month and today.day < self.date_of_birth.day):
+            age -= 1
+        return age
+
+    def __str__(self):
+        return f"Person(name={self.name}, country={self.country}, date_of_birth={self.date_of_birth.date()})"
+
+person = Person("AnanthKrishnana KR", "INDIA", "1994-02-28")
+print(person)  
+print(f"Age: {person.calculate_age()}")  
+
